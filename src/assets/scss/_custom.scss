@@ -330,7 +330,9 @@ $nav-border-size: 3px;
 $topbar-sticky-shrink-padding: 2.25rem; // Height of topbar
 $topbar-sticky-shrink-padding-stuck: 1.25rem; // Stuck height of topbar
 $topbar-sticky-shrink-bg: $dark-gray;
-#main-nav {
+#main-nav, 
+#top-nav,
+#big-nav {
     .top-bar {
         display: block;
         padding: 0;
@@ -372,11 +374,11 @@ $topbar-sticky-shrink-bg: $dark-gray;
                     }
                 }
             }
-            &.active {
-                a {
-                    color: darken($white, 50%);
-                }
-            }
+        }
+    }
+    .active {
+        a {
+            color: darken($white, 50%) !important;
         }
     }
 }

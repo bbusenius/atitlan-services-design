@@ -5,12 +5,16 @@
         <nav id="top-nav" data-sticky data-options="marginTop:0;">
           <ul class="menu align-center">
             {{#each nav.item}}
-            <li>
-              <a href="{{link}}">
-                {{text}}
-                {{#ifequal text 'Español'}} <i class="fa fa-flag" aria-hidden="true"></i>{{/ifequal}}
-              </a>
-            </li>  
+              {{#ifequal text 'Home'}}
+                  <!--Do nothing-->
+              {{else}}
+              <li>
+                <a href="{{link}}">
+                  {{text}}
+                  {{#ifequal text 'Español'}} <i class="fa fa-flag" aria-hidden="true"></i>{{/ifequal}}
+                </a>
+              </li>
+              {{/ifequal}}
             {{/each}}
           </ul>
         </nav>
@@ -19,7 +23,7 @@
         <!--<h1>Atitl&aacute;n Services</h1>
         <a href="#" class="button large">Book a tour now</a>-->
         <div id="badge">
-          <a href="#">
+          <a href="reservations.html">
             {{> welcome-badge }}
           </a>
         </div><!--/#badge-->

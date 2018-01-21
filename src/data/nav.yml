@@ -1,5 +1,8 @@
 item:
   -
+    text: Home
+    link: index.html
+  -
     text: About
     link: about.html
   -
