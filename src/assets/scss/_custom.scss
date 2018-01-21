@@ -1,0 +1,496 @@
+// Includes
+@include foundation-float-classes;
+
+// General
+// -------
+section:not(#welcome) {
+    padding: rem-calc(25) 0;
+}
+.grid-margin-x {
+    margin-top: map-get($grid-margin-gutters, small) / 2;
+    @include breakpoint(medium) {
+        margin-top: map-get($grid-margin-gutters, medium) / 2;
+    }
+}
+h2 {
+    font-weight: 700;
+    color: lighten($dark-gray, 10%);
+}
+h1 {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+}
+.logo {
+    a {
+        color: $white;
+        transition: all 0.3s ease-in-out 0s;
+        &:hover {
+            color: lighten($primary-color, 40%);
+        }
+    }
+    font-size: rem-calc(25);
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+}
+
+// Images
+// ------
+.fig-wrap {
+    background: lighten($light-gray, 2%);
+    padding: 1.5rem;
+    margin-bottom: $paragraph-margin-bottom;
+    figure {
+        display: table;
+        margin: 0 auto;
+        img {
+            border: 1px solid $dark-gray;
+        }
+        figcaption {
+            background: $dark-gray;
+            color: $white;
+            padding: rem-calc(5);
+        }
+    }
+}
+
+// Orbit Slider
+// ------------
+.orbit .orbit-container {
+}
+
+// Backgrounds
+// -----------
+.bg-primary {
+    background: $primary-color;
+}
+.bg-secondary {
+    background: $secondary-color;
+}
+.bg-black {
+    background: $black;
+    color: $white;
+}
+.bg-white {
+    background: $white;
+}
+.bg-dark-gray {
+    background: $dark-gray;
+    color: $white;
+}
+.bg-light-gray {
+    background: $light-gray !important;
+}
+
+
+// Homepage
+// --------
+#welcome {
+    background-color: $black;
+    background-image: url(../../assets/img/welcome.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1, a {
+        color: $white;
+    }
+    h1 {
+        font-size: rem-calc(60);
+        font-family: 'Heebo', sans-serif;
+        font-weight: 700;
+    }
+    .header {
+        height: 30vh;
+    }
+    .body {
+        height: 60vh;
+        #badge {
+            padding: 0 5%;
+            margin: 0 auto;
+            @include breakpoint(medium) {
+                padding: 0%;
+                width: rem-calc(350);
+            }
+            @include breakpoint(large) {
+                width: rem-calc(400);
+            }
+        }
+    }
+    .footer {
+        height: 10vh;
+    }
+}
+// Badge general
+$badge-shadow: drop-shadow(1px 1px 10px rgba(0,0,0,.6));
+$badge-hover-shadow: drop-shadow(1px 1px 5px rgba(0,0,0,.8));
+#badge {
+    $badge-bg: #808080;
+    $badge-fg: #f2f2f2;
+    a {
+        svg {
+            -webkit-filter: $badge-shadow;
+            filter: $badge-shadow;
+        }
+        .a, .b, .c, .d, .e {
+            transition: all .3s ease-in-out 0s;
+        }
+        .a {
+            isolation:isolate;
+        }
+        .b {
+            fill: $badge-bg;
+
+        }
+        .c {
+            fill: $badge-fg;
+        }
+        .d {
+            fill: $orange;
+        }
+        .e {
+            fill: $white;
+        }
+        &:hover {
+            svg {
+                -webkit-filter: $badge-hover-shadow;
+                filter: $badge-hover-shadow;
+                transform: rotate(-5deg);
+            }
+            .b {
+                fill: darken($badge-bg, 8%);
+            }
+            .c {
+                fill: darken($badge-fg, 10%);
+            }
+            .d {
+                fill: darken($orange, 12%);
+            }
+        }
+    }
+}
+
+// Mayan owned badge
+// -----------------
+.mayan-owned {
+    width: 150px;
+    @include breakpoint(medium) {
+        padding: 1em 0 0 1em;
+        width: 200px;
+    }
+    @include breakpoint(large) {
+        padding: 2em 0 0 2em;
+        width: 300px;
+    }
+    position: absolute;
+    z-index: 2;
+    svg {
+        -webkit-filter: $badge-shadow;
+        filter: $badge-shadow;
+        transform: rotate(-15deg);
+    }
+    .a{
+        isolation:isolate;
+    }
+    .b{
+        fill: $light-gray;
+    }
+    .c{
+        fill: $orange;
+    }
+}
+
+// Testimonials
+// ------------
+.testimonial {
+    h2 {
+        color: darken($white, 20%);
+        font-size: $global-font-size;
+    }
+    blockquote {
+        padding: rem-calc(30);
+        p, cite, i {
+            color: $white;
+        }
+        p {
+            font-size: rem-calc(30);
+        }
+        cite {
+            font-size: rem-calc(20);
+        }
+    }
+}
+
+// Cards
+// -----
+$card-reveal-transition-speed: 0.4s;
+$card-color: lighten($black, 12%);
+
+.card-reveal-wrapper {
+    position: relative;
+    background: $card-color;
+    @include breakpoint(large) {
+        background: transparent;
+    }
+    color: $white;
+    h3 {
+        font-size: rem-calc(20);
+    }
+
+    .open-button,
+    .close-button {
+        cursor: pointer;
+        font-size: rem-calc(19);
+        font-weight: bold;
+        padding-left: 0.5rem;
+        text-align: right;
+        color: $white;
+        @include breakpoint(large) {
+            display: none;
+        }
+    }
+
+    .close-button {
+        width: 100%;
+        float: right;
+    }
+    .card-section {
+        cursor: pointer;
+        @include breakpoint(large) {
+            cursor: auto;
+            padding: 0;
+            h3 {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: rgba($card-color, .7%);
+                padding: .75rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+    .card-reveal {
+        background: $card-color;
+        bottom: 0;
+        display: block;
+        left: 0;
+        overflow: hidden;
+        padding: 3rem 1.5rem;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        transition: top $card-reveal-transition-speed ease-in-out;
+    }
+
+    .card-reveal.open {
+        top: 0;
+        z-index: 1;
+    }
+}
+
+// Top Navigation
+// --------------
+$nav-border-size: 3px;
+#top-nav {
+    font-weight: bold;
+    font-size: rem-calc(17);
+    a {
+        padding: 1rem 0 1rem 0;
+        margin: 0 1rem;
+        transition: all 0.1s ease-in-out 0s;
+        &:hover {
+            border-bottom: $nav-border-size solid $secondary-color;
+            color: $secondary-color;
+        }
+    }
+}
+
+// Main Navigation - Welcome Page
+#big-nav {
+    position: fixed;
+    top: 0;
+    background: $dark-gray;
+    width: 100%;
+    z-index: 2;
+    a {
+        color: $white;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        transition: all 0.1s ease-in-out 0s;
+        box-sizing: border-box;
+        border-bottom: $nav-border-size solid transparent;
+        &:hover {
+            border-bottom: $nav-border-size solid $secondary-color;
+            color: $secondary-color;
+        }
+    }
+}
+// Main Navigation - Normal Pages
+// ---------------
+$topbar-sticky-shrink-padding: 2.25rem; // Height of topbar
+$topbar-sticky-shrink-padding-stuck: 1.25rem; // Stuck height of topbar
+$topbar-sticky-shrink-bg: $dark-gray;
+#main-nav {
+    .top-bar {
+        display: block;
+        padding: 0;
+        li {
+            text-align: center;
+            display: block;
+            width: 100%;
+            @include breakpoint(medium) {
+                text-align: left;
+                width: auto;
+            }
+            a {
+                color: $white;
+                font-size: rem-calc(19);
+                transition: all 0.1s ease-in-out 0s;
+                //padding: $topbar-sticky-shrink-padding 0;
+                //margin: 0 .5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                display: block;
+                box-sizing: border-box;
+                border-bottom: $nav-border-size / 2 dashed rgba($white, 0.4);
+                @include breakpoint(medium) {
+                    border-bottom: $nav-border-size solid transparent;
+                }
+                &:hover {
+                    border-bottom: $nav-border-size / 2 solid $secondary-color;
+                    color: $secondary-color;
+                    background: darken($topbar-sticky-shrink-bg, 5%);
+                    @include breakpoint(medium) {
+                        border-bottom: $nav-border-size solid $secondary-color;
+                    }
+                }
+            }
+            &:first-child {
+                a {
+                    @include breakpoint(medium) {
+                        padding-left: 2rem;
+                    }
+                }
+            }
+            &.active {
+                a {
+                    color: darken($white, 50%);
+                }
+            }
+        }
+    }
+}
+#main-nav-header {
+    padding: 2rem;
+    background-color: $primary-color;
+    background-image: url(../../assets/img/welcome.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center 45%;
+    text-align: center;
+    @include breakpoint(medium) {
+        text-align: left;
+    }
+    .logo {
+        font-size: rem-calc(40);
+    }
+}
+.topbar-sticky-shrink {
+    background: $topbar-sticky-shrink-bg;
+    li {
+        a {
+            transition: padding 0.25s ease;
+            padding:$topbar-sticky-shrink-padding / 2;
+            @include breakpoint(medium) {
+                padding:$topbar-sticky-shrink-padding;
+            }
+        }
+    }
+    .menu {
+      background: $topbar-sticky-shrink-bg;
+    }
+}
+
+.is-stuck .topbar-sticky-shrink {
+    li {
+        a {
+            transition: padding 0.25s ease;
+            padding: $topbar-sticky-shrink-padding-stuck;
+        }
+    }
+}
+
+[data-sticky] {
+    width: 100%;
+}
+
+// About
+// -----
+#about-carlos-and-martina {
+    //background-color: $black;
+    //background-image: url(../../assets/img/carlos-and-martina.jpg);
+    //-webkit-background-size: cover;
+    //-moz-background-size: cover;
+    //-o-background-size: cover;
+    //background-size: cover;
+}
+
+
+// Forms
+// -----
+.required::before {
+    content: " * ";
+    color: red;
+    font-weight: bold;
+}
+legend {
+    font-weight: bold;
+    font-size: $global-font-size + 2;
+    border-bottom: 2px solid;
+    width: 100%;
+    color: $medium-gray;
+}
+fieldset {
+    margin-bottom: 15px;
+}
+
+
+// Footer
+// ------
+
+footer {
+    .grid-x {
+        padding: 2.5rem;
+        margin-top: 0;
+        a {
+            transition: all 0.2s ease-in-out 0s;
+            color: lighten($primary-color, 20%);
+            &:hover {
+                color: $white;
+            }
+            text-decoration: underline;
+        }
+    }
+    .grid-container.fluid.bg-black {
+        .text-left,
+        .text-right {
+            text-align: center;
+        }
+        .text-left { 
+            @include breakpoint(medium) {
+                text-align: left;
+            }
+        }
+        .text-right { 
+            @include breakpoint(medium) {
+                text-align: right;
+            }
+        }
+        a {
+            color: darken($white, 20%);
+            text-decoration: underline;
+        }
+    }
+}
