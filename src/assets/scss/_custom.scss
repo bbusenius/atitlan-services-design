@@ -19,7 +19,7 @@
 // General
 // -------
 body {
-    background: lighten($light-gray, 2%);
+    background: $light-gray;
 }
 .content {
     background: $white;
@@ -118,7 +118,7 @@ h1 {
         font-weight: 700;
     }
     .header {
-        height: 25vh;
+        height: 30vh;
     }
     .body {
         height: 60vh;
@@ -135,7 +135,7 @@ h1 {
         }
     }
     .footer {
-        height: 15vh;
+        height: 10vh;
     }
 }
 // Badge general
