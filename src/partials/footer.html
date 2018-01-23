@@ -10,7 +10,11 @@
         <h5>Navigation</h5>
         <ul class="vertical menu align-center">
           {{#each nav.item}}
-          <li><a href="{{link}}">{{text}}</a></li>
+            {{#ifequal text 'Español'}}
+              <!--Do nothing-->
+            {{else}}
+              <li><a href="{{link}}">{{text}}</a></li>
+            {{/ifequal}}
           {{/each}}
         </ul>
       </div>

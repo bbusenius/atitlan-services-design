@@ -1,10 +1,29 @@
 // Includes
 @include foundation-float-classes;
 
+// Spacing classes
+// ---------------
+.mt0 {
+    margin-top: 0 !important;
+}
+.pt20 {
+    padding-top: rem-calc(20) !important;
+}
+.pt25 {
+    padding-top: rem-calc(25) !important;
+}
+.pb25 {
+    padding-bottom: rem-calc(25) !important;
+}
+
 // General
 // -------
-section:not(#welcome) {
-    padding: rem-calc(25) 0;
+body {
+    background: lighten($light-gray, 2%);
+}
+.content {
+    background: $white;
+    padding: rem-calc(20) 0;
 }
 .grid-margin-x {
     margin-top: map-get($grid-margin-gutters, small) / 2;
@@ -99,12 +118,12 @@ h1 {
         font-weight: 700;
     }
     .header {
-        height: 30vh;
+        height: 25vh;
     }
     .body {
         height: 60vh;
         #badge {
-            padding: 0 5%;
+            padding: 0 12%;
             margin: 0 auto;
             @include breakpoint(medium) {
                 padding: 0%;
@@ -116,7 +135,7 @@ h1 {
         }
     }
     .footer {
-        height: 10vh;
+        height: 15vh;
     }
 }
 // Badge general
@@ -306,6 +325,7 @@ $nav-border-size: 3px;
 }
 
 // Main Navigation - Welcome Page
+// ---------------
 #big-nav {
     position: fixed;
     top: 0;
@@ -399,6 +419,12 @@ $topbar-sticky-shrink-bg: $dark-gray;
         font-size: rem-calc(40);
     }
 }
+#main-nav-header.services-banner {
+    background-image: url(../../assets/img/services.jpg);
+}
+#main-nav-header.res-banner {
+    background-image: url(../../assets/img/tikal-xl.jpg);
+}
 .topbar-sticky-shrink {
     background: $topbar-sticky-shrink-bg;
     li {
@@ -458,6 +484,14 @@ fieldset {
     margin-bottom: 15px;
 }
 
+// Services
+// --------
+.services {
+    h2 {
+        color: darken($medium-gray, 30%);
+        border-bottom: rem-calc(3) solid;
+    }
+}
 
 // Footer
 // ------

@@ -3,14 +3,14 @@ item:
     text: Home
     link: index.html
   -
-    text: About
-    link: about.html
-  -
     text: Services
     link: services.html 
   -
-    text: Make Reservations
+    text: Reservations
     link: reservations.html
+  -
+    text: About
+    link: about.html
   -
     text: Español
     link: \#
