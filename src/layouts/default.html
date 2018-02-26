@@ -9,8 +9,17 @@
     <title>Atitl&aacute;n Services</title>
     <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700,800" rel="stylesheet"> 
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+
+    <style>
+      #main-nav-header {
+        background-image: url(../../assets/img/welcome.jpg);
+      }
+    </style>
+
+
+
   </head>
-  <body>
+  <body {{#ifpage 'index'}}class="template-homepage"{{/ifpage}}>
 
     {{#unlesspage 'index'}}
       {{> main-nav}}

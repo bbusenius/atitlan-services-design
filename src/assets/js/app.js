@@ -1,8 +1,11 @@
 import $ from 'jquery';
+import jQuery from 'jquery'; // 1 of 2: hAcK for getting jQuery usable on its own
 import whatInput from 'what-input';
 import 'waypoints/lib/noframework.waypoints.js';
 
 window.$ = $;
+
+window.jQuery = jQuery; // 2 of 2: hAcK for getting jQuery usable on its own
 
 import Foundation from 'foundation-sites';
 // If you want to pick and choose which modules to include, comment out the above and uncomment
@@ -63,7 +66,7 @@ $(window).scroll(function() {
   });
 });
 
-/* Waypoints for showing and hiding nav bars */
+// Waypoints for showing and hiding nav bars 
 var topNav = new Waypoint({
   element: document.getElementById('badge'),
   handler: function() {
@@ -73,10 +76,8 @@ var topNav = new Waypoint({
 })
 
 var mainNav = new Waypoint({
-  element: document.getElementById('services-transport'),
+  element: document.getElementById('main-content'),
   handler: function() {
     $('#big-nav').toggleClass('hide');
   }
-})
-
-
+});

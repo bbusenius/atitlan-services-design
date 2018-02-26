@@ -6,6 +6,9 @@
 .mt0 {
     margin-top: 0 !important;
 }
+.mt20 { 
+    margin-top: rem-calc(20) !important;
+}
 .pt20 {
     padding-top: rem-calc(20) !important;
 }
@@ -26,18 +29,27 @@ body {
     padding: rem-calc(20) 0;
 }
 .grid-margin-x {
-    margin-top: map-get($grid-margin-gutters, small) / 2;
     @include breakpoint(medium) {
         margin-top: map-get($grid-margin-gutters, medium) / 2;
     }
 }
 h2 {
     font-weight: 700;
+    color: darken($medium-gray, 30%);
+    border-bottom: rem-calc(3) solid; 
+} 
+.template-homepage {
+  h2 {
     color: lighten($dark-gray, 10%);
+    border-bottom: none; 
+  }
 }
 h1 {
     font-family: 'Heebo', sans-serif;
     font-weight: 700;
+}
+h2, h3, h4, h5, h6 {
+    margin-bottom: map-get($grid-margin-gutters, medium) / 1.25;
 }
 .logo {
     a {
@@ -69,6 +81,24 @@ h1 {
             color: $white;
             padding: rem-calc(5);
         }
+    }
+}
+
+// Icons
+// -----
+.fa.big {
+    font-size: 200px;
+    font-size: 60vw;
+    color: darken($medium-gray, 20%);
+    padding: rem-calc(20);
+    @include breakpoint(medium) {
+        font-size: 50vw;
+    }
+    @include breakpoint(large) {
+        font-size: 30vw;
+    }
+    @include breakpoint(xlarge) {
+        font-size: 20vw;
     }
 }
 
@@ -405,7 +435,6 @@ $topbar-sticky-shrink-bg: $dark-gray;
 #main-nav-header {
     padding: 2rem;
     background-color: $primary-color;
-    background-image: url(../../assets/img/welcome.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -484,14 +513,6 @@ fieldset {
     margin-bottom: 15px;
 }
 
-// Services
-// --------
-.services {
-    h2 {
-        color: darken($medium-gray, 30%);
-        border-bottom: rem-calc(3) solid;
-    }
-}
 
 // Footer
 // ------

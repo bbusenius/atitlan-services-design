@@ -15240,7 +15240,10 @@ var _foundationSites2 = _interopRequireDefault(_foundationSites);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// 1 of 2: hAcK for getting jQuery usable on its own
 window.$ = _jquery2.default;
+
+window.jQuery = _jquery2.default; // 2 of 2: hAcK for getting jQuery usable on its own
 
 // If you want to pick and choose which modules to include, comment out the above and uncomment
 // the line below
@@ -15299,7 +15302,7 @@ hoverToggleRevealCard(largeScreen);
   });
 });
 
-/* Waypoints for showing and hiding nav bars */
+// Waypoints for showing and hiding nav bars 
 var topNav = new Waypoint({
   element: document.getElementById('badge'),
   handler: function handler() {
@@ -15309,7 +15312,7 @@ var topNav = new Waypoint({
 });
 
 var mainNav = new Waypoint({
-  element: document.getElementById('services-transport'),
+  element: document.getElementById('main-content'),
   handler: function handler() {
     (0, _jquery2.default)('#big-nav').toggleClass('hide');
   }
